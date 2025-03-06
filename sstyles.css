@@ -1,0 +1,180 @@
+
+body {
+    font-family: acumin-pro, /*sans-serif;*/
+    margin: 0;
+    padding: 0;
+    background-color: #ffa500;
+    color: #000;
+    /*background-image: url('suzannecollins.jpg'); /* Replace with actual image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/* Header */
+header {
+    background: #111;
+    color: white;
+    padding: 30px;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 30px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Sections */
+.hero, .about, .books, .contact {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 40px;
+    border-radius: 10px;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    opacity: 1;  /* Ensure content is visible initially */
+    transform: translateY(0);
+}
+
+.hero {
+    background: url('sunrise.jpg') no-repeat center center/cover;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+}
+
+.about, .books, .contact {
+    padding: 50px 20px;
+    text-align: center;
+    background: orange;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #EFEFEF;
+    margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+section {
+    background-color: #808080; /* Light grey background */
+    padding: 100px;
+    margin-left: 100px;
+	margin-right: 100px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+    border-radius: 20px; /* Optional: Rounded corners */
+}
+
+.about {
+    border: px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+/* Books Section */
+.book-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+.book {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.book img {
+    width: 150px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.book h3 {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.book p {
+    font-size: 0.9em;
+    color: #FFFFFF;
+}
+
+.book a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* Buttons */
+.btn, button {
+    background: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+}
+
+.btn:hover, button:hover {
+    background: #e68900;
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+}
+
+form input, form textarea {
+    margin: 10px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    background: #000;
+    color: white;
+    padding: 20px;
+}
+
+
+/* Scroll Animation */
+window.addEventListener("scroll", function() {
+    document.querySelectorAll(".hero, .about, .books, .contact").forEach(section => {
+        const position = section.getBoundingClientRect().top;
+        const screenHeight = window.innerHeight;
+        if (position < screenHeight - 100) {
+            section.style.opacity = "1";
+            section.style.transform = "translateY(0)";
+        }
+    });
+});
